@@ -61,6 +61,8 @@ services:
     container_name: "${PROJECT_NAME}_ui"
     # ports:
     #   - ${UI_LISTEN_PORT}:${UI_LISTEN_PORT}
+    volumes:
+      - ./ui:/app/
     environment:
       - REACT_APP_GRAPHQL_URI=/graphql
       - PROXY=http://${PROJECT_NAME}_api:4001/graphql
